@@ -18,6 +18,11 @@ Summary of Software Installed and Configuration Changes
 sudo apt-get install apache2
 Verified that the web address is able to show Apache  default page
 
+## NTP
+sudo apt-get install ntp 
+Date verified and timezone is UTC
+The servers and ntp status was also checked using: sudo ntpq -p
+
 ### User Management
 
 ## Root User
@@ -31,3 +36,5 @@ For grader user, sudo access was provided by using the command sudo visudo and a
 ## SSH Port and misc
 SSH Port was edited in /etc/ssh/sshd_config to 2200. All applications were updated using sudo apt-get update and sudo apt-get upgrade commands. Every user is required to ssh using RSA keys only.
 
+## UFW
+UFW has been enabled by default, all incoming connections are denied except 80/tcp, 2200/tcp and 123 while all outgoing functions are allowed.
