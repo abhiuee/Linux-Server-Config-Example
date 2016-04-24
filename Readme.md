@@ -11,6 +11,11 @@ IP 52.38.22.215 SSH Port 2200
 Summary of Software Installed and Configuration Changes
 -------------------------------------------------------
 
+### Software Installed
+
+## Apache2
+sudo apt-get install apache2
+
 ### User Management
 
 ## Root User
@@ -23,3 +28,4 @@ For grader user, sudo access was provided by using the command sudo visudo and a
 
 ## SSH Port and misc
 SSH Port was edited in /etc/ssh/sshd_config to 2200. All applications were updated using sudo apt-get update and sudo apt-get upgrade commands. Every user is required to ssh using RSA keys only.
+
