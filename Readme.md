@@ -6,7 +6,8 @@ SSH Port and IP Address
 
 IP 52.38.22.215 SSH Port 2200
 
-
+### Web Address
+http://ec2-52-38-22-215.us-west-2.compute.amazonaws.com/
 
 Summary of Software Installed and Configuration Changes
 -------------------------------------------------------
@@ -15,6 +16,7 @@ Summary of Software Installed and Configuration Changes
 
 ## Apache2
 sudo apt-get install apache2
+Verified that the web address is able to show Apache  default page
 
 ### User Management
 
