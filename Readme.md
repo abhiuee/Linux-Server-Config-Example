@@ -15,27 +15,35 @@ Summary of Software Installed and Configuration Changes
 ### Upgrade All Packages 
 
 ```
-sudo apt-get update
-sudo apt-get upgrade
+apt-get update
+apt-get upgrade
 ```
+### User Management
+
+## Root User
+For the root user, /etc/ssh/sshd_config file was edited to change PermitRootLogin field to no so that root user is not allowed to ssh. 
+
+## Grader User
+For grader user, sudo access was provided by using the command sudo visudo and adding user grader. A strong password was created for the user. Key based authentication was allowed and authorized keys was properly set up.
+
+
 ### Software Installed
 
-## Apache2
-sudo apt-get install apache2
+```
+apt-get install finger
+apt-get install apache2
+apt-get install ntp
+apt-get install libapache2-mod-wsgi
+apt-get install postgresql
+apt-get install python-flask python-psycopg2 python-sqlalchemy python-oauth2client
+```
+
 Verified that the web address is able to show Apache  default page
 
 ## NTP
 sudo apt-get install ntp 
 Date verified and timezone is UTC
 The servers and ntp status was also checked using: sudo ntpq -p
-
-### User Management
-
-## Root User
-For the root user, /etc/ssh/sshd_config file was edit to change PermitRootLogin field to no so that root user is not allowed to ssh. Finger tool was installed to verify the accounts for newly created users.
-
-## Grader User
-For grader user, sudo access was provided by using the command sudo visudo and adding user grader. A strong password was created for the user. Key based authentication was allowed and authorized keys was properly set up.
 
 ### Security
 
