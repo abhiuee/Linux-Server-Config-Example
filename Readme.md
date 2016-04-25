@@ -12,6 +12,12 @@ http://ec2-52-38-22-215.us-west-2.compute.amazonaws.com/
 Summary of Software Installed and Configuration Changes
 -------------------------------------------------------
 
+### Upgrade All Packages 
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
 ### Software Installed
 
 ## Apache2
