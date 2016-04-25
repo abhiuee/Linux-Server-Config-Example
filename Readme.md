@@ -25,7 +25,9 @@ sudo apt-get upgrade
 * Create grader user ```sudo adduser grader```
 * Install finger ```sudo apt-get install``` 
 * Give grader sudo access ```sudo visudo```
-* Add in this file ```grader ALL=(ALL:ALL) ALL
+* Add in this file ```grader ALL=(ALL:ALL) ALL```
+* Make .ssh directory in home dir ```mkdir /home/grader/.ssh```
+* Copy the authorized_keys from root to grader user ```cp ~/.ssh/authorized_keys /home/grader/.ssh/authorized_keys```
 
 #### Root User
 
