@@ -89,7 +89,20 @@ To 			Action		From
 * Install apache ```sudo apt-get install apache2```
 * Verify that the default page is shown at the public address
 * Install mod_wsgi ```sudo apt-get install libapache2-mod-wsgi```
-* Configure Apache 
+* Configure Apache ```sudo nano /etc/apache2/sites-enabled/000-default.conf``` by adding line WSGIScriptAlias / /var/www/html/myapp.wsgi
+* Restart Apache ```sudo apache2ctl restart```
+* To verify if wsgi is enabled ```sudo a2enmod wsgi```
+
+##### Create Catalog App
+* Install git ```sudo apt-get install git```
+* Clone your repository using ```git clone```
+* Follow steps from digital ocean
+  ```cd /var/www
+  mkdir catalog```
+  cd catalog```
+  mkdir catalog```
+  mv /home/grader/catalogapp/* /var/www/catalog/catalog/```
+
 #### PostgreSQL
 
 * Install postgre ```sudo apt-get install postgresql```
