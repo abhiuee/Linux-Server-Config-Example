@@ -98,10 +98,10 @@ To 			Action		From
 * Clone your repository using ```git clone```
 * Follow steps from digital ocean
   ```cd /var/www
-  mkdir catalog```
-  cd catalog```
-  mkdir catalog```
-  mv /home/grader/catalogapp/* /var/www/catalog/catalog/```
+     mkdir catalog
+     cd catalog
+     mkdir catalog
+    mv /home/grader/catalogapp/* /var/www/catalog/catalog/```
 
 #### PostgreSQL
 
