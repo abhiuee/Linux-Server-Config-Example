@@ -62,3 +62,25 @@ To 			Action		From
 2200/tcp		ALLOW		Anywhere
 123			ALLOW		Anywhere
 ```
+
+### Application
+
+## PostgreSQL
+
+# Security
+Add password for user postgres. Edit /etc/postgresql/9.3/main/postgresql.conf and make listen_addresses = 'localhost' so that the remote connections to postgresql are now allowed. This value by default was also localhost.
+
+# Catalog User
+Following steps were taken:
+
+```
+sudo -i -u postgres
+createuser -W catalog
+psql>> create_database catalogapp;
+psql>> GRANT ALL PRIVILEGES ON DATABASE catalogapp to catalog;
+psql>>\l
+```
+
+\l was used to verify that the privileges have been provided to catalog user.
+
+
