@@ -13,22 +13,32 @@ Summary of Software Installed and Configuration Changes
 -------------------------------------------------------
 
 ### Upgrade All Packages 
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
 
-```
-apt-get update
-apt-get upgrade
-```
 ### User Management
 
-#### Root User
-For the root user, /etc/ssh/sshd_config file was edited to change PermitRootLogin field to no so that root user is not allowed to ssh. 
-
 #### Grader User
-For grader user, sudo access was provided by using the command sudo visudo and adding user grader. A strong password was created for the user. Key based authentication was allowed and authorized keys was properly set up by copying the root authorized keys into the grader .ssh/authorized_keys. Proper permissions were also set for the files.
+
+* Create grader user ```sudo adduser grader```
+* Install finger ```sudo apt-get install``` 
+* Give grader sudo access ```sudo visudo```
+* Add in this file ```grader ALL=(ALL:ALL) ALL
+
+#### Root User
+
+* Remove ssh for root user
+  ```
+  sudo nano /etc/ssh/sshd_config
+  ```
+  Change PermitRootLogin field to no.
 
 ### Time Zone Configuration
-Date verified and timezone is UTC
-The servers and ntp status was also checked using: 
+
+* Date verified and timezone is UTC
+* The servers and ntp status was also checked using: 
 ```
 ntpq -p
 ```
