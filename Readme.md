@@ -20,10 +20,10 @@ apt-get upgrade
 ```
 ### User Management
 
-## Root User
+#### Root User
 For the root user, /etc/ssh/sshd_config file was edited to change PermitRootLogin field to no so that root user is not allowed to ssh. 
 
-## Grader User
+#### Grader User
 For grader user, sudo access was provided by using the command sudo visudo and adding user grader. A strong password was created for the user. Key based authentication was allowed and authorized keys was properly set up by copying the root authorized keys into the grader .ssh/authorized_keys. Proper permissions were also set for the files.
 
 ### Time Zone Configuration
@@ -46,10 +46,10 @@ apt-get install python-flask python-psycopg2 python-sqlalchemy python-oauth2clie
 
 ### Security
 
-## SSH Port and misc
+#### SSH Port and misc
 SSH Port was edited in /etc/ssh/sshd_config to 2200. Every user is required to ssh using RSA keys only.
 
-## UFW
+#### UFW
 UFW has been enabled by default, all incoming connections are denied except 80/tcp, 2200/tcp and 123 while all outgoing functions are allowed.
 
 ```
@@ -65,12 +65,12 @@ To 			Action		From
 
 ### Application
 
-## PostgreSQL
+#### PostgreSQL
 
-### Security
+##### Security
 Add password for user postgres. Edit /etc/postgresql/9.3/main/postgresql.conf and make listen_addresses = 'localhost' so that the remote connections to postgresql are now allowed. This value by default was also localhost.
 
-### Catalog User
+##### Catalog User
 Following steps were taken:
 
 ```
