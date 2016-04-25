@@ -173,3 +173,6 @@ psql>>\l
 ### Some Resources
 
 * [Flask App on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
+* [Configure PostGreSQL](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04)
+* [OATH2 origin mismatch](http://stackoverflow.com/questions/15424441/google-drive-api-oauth-2-0-error-origin-mismatch)
+* [Configuring Time](https://help.ubuntu.com/community/UbuntuTime)
