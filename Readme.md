@@ -135,6 +135,21 @@ The catalog.conf file should look like this:
   CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
+* Enable catalog app ```sudo a2ensite catalog```
+* Create wsgi file ```sudo vim /var/www/catalog/catalog.wsgi```
+
+```
+#!/usr/bin/python
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0,"/var/www/catalog/")
+
+from catalog import app as application
+application.secret_key = 'Add your secret key'
+```
+* Restart server ```sudo service apache2 restart```
+
 #### PostgreSQL
 
 * Install postgre ```sudo apt-get install postgresql```
