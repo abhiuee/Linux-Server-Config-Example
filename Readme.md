@@ -163,5 +163,10 @@ psql>> create_database catalogapp;
 psql>> GRANT ALL PRIVILEGES ON DATABASE catalogapp to catalog;
 psql>>\l
 ```
+* Update the database_setup.py and __init__.py to call the new postgresql server 
+* Create the tables by ```python database_setup.py```
 
+##### Other Changes and Debug
+* In the python scripts, replace the client_secrets.json with the full path of the file
+* For the OATH2 authorization, make sure that the public webaddress is allowes as redirect and javascript origin, this can be done in google developers console.
 
