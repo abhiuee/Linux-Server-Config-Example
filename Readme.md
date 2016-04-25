@@ -97,12 +97,44 @@ To 			Action		From
 * Install git ```sudo apt-get install git```
 * Clone your repository using ```git clone```
 * Follow steps from digital ocean
-  ```cd /var/www
-     mkdir catalog
-     cd catalog
-     mkdir catalog
-    mv /home/grader/catalogapp/* /var/www/catalog/catalog/```
+```
+cd /var/www
+mkdir catalog
+cd catalog
+mkdir catalog
+mv /home/grader/catalogapp/* /var/www/catalog/catalog/
+cd catalog
+mv application.py __init__.py
+```
 
+##### Configure Apache for Catalog App
+
+```
+sudo nano /etc/apache2/sites-available/catalog.conf
+```
+
+The catalog.conf file should look like this:
+
+```
+<VirtualHost *:80>
+  ServerName ec2-52-38-22-215.us-west-2.compute.amazonaws.com
+  ServerAdmin admin@ec2-52-38-22-215.us-west-2.compute.amazonaws.com
+  ServerAlias ec2-52-38-22-215.us-west-2.compute.amazonaws.com
+  WSGIScriptAlias / /var/www/catalog/catalog.wsgi
+  <Directory /var/www/catalog/catalog/>
+      Order allow,deny
+      Allow from all
+  </Directory>
+  Alias /static /var/www/catalog/catalog/static
+  <Directory /var/www/catalog/catalog/static/>
+      Order allow,deny
+      Allow from all
+  </Directory>
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  LogLevel warn
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
 #### PostgreSQL
 
 * Install postgre ```sudo apt-get install postgresql```
