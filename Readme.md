@@ -58,8 +58,8 @@ Status: active
 
 To 			Action		From
 --			------		----
-80/tcp			ALLOW		Anywhere
-2200/tcp		ALLOW		Anywhere
+80/tcp		ALLOW		Anywhere
+2200/tcp	ALLOW		Anywhere
 123			ALLOW		Anywhere
 ```
 
@@ -67,10 +67,10 @@ To 			Action		From
 
 ## PostgreSQL
 
-# Security
+### Security
 Add password for user postgres. Edit /etc/postgresql/9.3/main/postgresql.conf and make listen_addresses = 'localhost' so that the remote connections to postgresql are now allowed. This value by default was also localhost.
 
-# Catalog User
+### Catalog User
 Following steps were taken:
 
 ```
