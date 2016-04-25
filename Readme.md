@@ -170,3 +170,6 @@ psql>>\l
 * In the python scripts, replace the client_secrets.json with the full path of the file
 * For the OATH2 authorization, make sure that the public webaddress is allowes as redirect and javascript origin, this can be done in google developers console.
 
+### Some Resources
+
+* [Flask App on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
