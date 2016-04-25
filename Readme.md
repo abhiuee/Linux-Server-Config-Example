@@ -24,8 +24,14 @@ apt-get upgrade
 For the root user, /etc/ssh/sshd_config file was edited to change PermitRootLogin field to no so that root user is not allowed to ssh. 
 
 ## Grader User
-For grader user, sudo access was provided by using the command sudo visudo and adding user grader. A strong password was created for the user. Key based authentication was allowed and authorized keys was properly set up.
+For grader user, sudo access was provided by using the command sudo visudo and adding user grader. A strong password was created for the user. Key based authentication was allowed and authorized keys was properly set up by copying the root authorized keys into the grader .ssh/authorized_keys. Proper permissions were also set for the files.
 
+### Time Zone Configuration
+Date verified and timezone is UTC
+The servers and ntp status was also checked using: 
+```
+ntpq -p
+```
 
 ### Software Installed
 
@@ -38,17 +44,21 @@ apt-get install postgresql
 apt-get install python-flask python-psycopg2 python-sqlalchemy python-oauth2client
 ```
 
-Verified that the web address is able to show Apache  default page
-
-## NTP
-sudo apt-get install ntp 
-Date verified and timezone is UTC
-The servers and ntp status was also checked using: sudo ntpq -p
-
 ### Security
 
 ## SSH Port and misc
-SSH Port was edited in /etc/ssh/sshd_config to 2200. All applications were updated using sudo apt-get update and sudo apt-get upgrade commands. Every user is required to ssh using RSA keys only.
+SSH Port was edited in /etc/ssh/sshd_config to 2200. Every user is required to ssh using RSA keys only.
 
 ## UFW
 UFW has been enabled by default, all incoming connections are denied except 80/tcp, 2200/tcp and 123 while all outgoing functions are allowed.
+
+```
+sudo ufw status
+Status: active 
+
+To 			Action		From
+--			------		----
+80/tcp			ALLOW		Anywhere
+2200/tcp		ALLOW		Anywhere
+123			ALLOW		Anywhere
+```
